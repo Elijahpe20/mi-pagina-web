@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mi Portafolio</title>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="header-controls">
+				<!-- Contenedor de idioma + toggle -->
+				<div class="language-toggle">
+					<!-- Banderas -->
+					<img src="assets/img/es.png" alt="Español" id="lang-es" />
+					<img src="assets/img/en.png" alt="English" id="lang-en" />
+
+					<!-- Toggle Sol/Luna anidado -->
+					<div class="theme-toggle">
+						<input type="checkbox" id="toggle-dark" />
+						<label for="toggle-dark" class="toggle-label">
+							<span class="sun">☀️</span>
+							<span class="moon">🌙</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<nav class="main-nav" role="navigation" aria-label="Menú principal">
+				<ul class="nav-list">
+					<li><a href="#home" id="nav-home">Home</a></li>
+					<li><a href="#about" id="nav-about">Acerca de mí</a></li>
+					<li><a href="#skills" id="nav-skills">Mis habilidades</a></li>
+					<li><a href="#project" id="nav-project">¿Ideas en mente?</a></li>
+					<li><a href="#contact" id="nav-contact">Contáctame</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="home" class="home-section responsive-section">
+				<div class="container profile-container">
+					<img
+						src="assets/img/Foto.png"
+						alt="Mi Foto"
+						class="profile-img vibrar"
+					/>
+					<div class="text-container">
+						<h1 class="title">
+							<span class="nombre">Elías</span>
+							<span class="apellido">Vilcachagua</span>
+						</h1>
+						<p id="typing-text" class="typing"></p>
+
+						<div class="social-links">
+							<a
+								href="https://www.linkedin.com/in/elviro/"
+								target="_blank"
+								aria-label="LinkedIn"
+							>
+								<img
+									src="assets/img/Linkedin-icon.png"
+									alt="LinkedIn"
+									class="social-icon"
+								/>
+							</a>
+							<a
+								href="https://www.instagram.com/veliasr/?hl=en"
+								target="_blank"
+								aria-label="Instagram"
+							>
+								<img
+									src="assets/img/Instagram-icon.png"
+									alt="Instagram"
+									class="social-icon"
+								/>
+							</a>
+							<a href="mailto:veliasr86@gmail.com" aria-label="Email">
+								<img
+									src="assets/img/Email-icon2.png"
+									alt="Email"
+									class="social-icon"
+								/>
+							</a>
+						</div>
+
+						<button id="contact-btn" type="button">Contáctame</button>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="about"
+				class="about-section section-bg-light responsive-section"
+			>
+				<div class="container about-container">
+					<div class="about-carousel">
+						<img src="assets/img/Foto-Descripcion1.jpg" alt="Foto 1" />
+						<img src="assets/img/Foto-Descripcion2.jpeg" alt="Foto 2" />
+						<img src="assets/img/Foto-Descripcion3.jpeg" alt="Foto 3" />
+						<img src="assets/img/Foto-Descripcion4.jpeg" alt="Foto 4" />
+					</div>
+					<div class="about-text">
+						<h2 id="about-title">Acerca de mí</h2>
+						<p id="about-description">
+							Soy un desarrollador fullstack con especialidad en Front-end
+							Developer, comunicador social, administrador de empresas y
+							estudiante de ciencia de datos. Me apasiona generar experiencias
+							de comunicación dinámicas y memorables, enfocándome en UI,
+							animaciones y experiencias de usuario intuitivas. Manejo HTML,
+							CSS, JavaScript y ReactJS.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="skills"
+				class="skills-section section-bg-medium responsive-section"
+			>
+				<div class="container">
+					<h2 id="skills-title">Mis habilidades</h2>
+
+					<div class="skills-grid">
+						<!-- Tarjeta 1 -->
+						<div class="skill-card">
+							<div class="card-inner">
+								<div class="card-front">
+									<span class="icon">💡</span>
+									<h3 id="skill-title-1">UX/UI Design</h3>
+									<p id="skill-desc-1">
+										Planificación y desarrollo web con enfoque en experiencia de
+										usuario.
+									</p>
+								</div>
+								<div class="card-back">
+									<img src="assets/img/Elias_1.png" alt="UX/UI Foto" />
+								</div>
+							</div>
+						</div>
+
+						<!-- Tarjeta 2 -->
+						<div class="skill-card">
+							<div class="card-inner">
+								<div class="card-front">
+									<span class="icon">✏️</span>
+									<h3 id="skill-title-2">Product Designer</h3>
+									<p id="skill-desc-2">
+										Rediseño completo de plataformas e-learning desde research
+										hasta prototipo.
+									</p>
+								</div>
+								<div class="card-back">
+									<img src="assets/img/Elias_2.png" alt="Product Designer" />
+								</div>
+							</div>
+						</div>
+
+						<!-- Tarjeta 3 -->
+						<div class="skill-card">
+							<div class="card-inner">
+								<div class="card-front">
+									<span class="icon">💻</span>
+									<h3 id="skill-title-3">Web Design</h3>
+									<p id="skill-desc-3">
+										Diseño responsive con HTML, CSS y GitHub con enfoque en
+										usabilidad.
+									</p>
+								</div>
+								<div class="card-back">
+									<img src="assets/img/Elias_3.png" alt="Web Design" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="project"
+				class="project-section section-bg-strong responsive-section"
+			>
+				<div class="container project-container">
+					<picture class="project-image">
+						<img
+							src="assets/img/Foto-senal.png"
+							alt="Foto Elías"
+							class="foto-silueta"
+						/>
+					</picture>
+					<div class="project-content">
+						<h2 id="project-title">¿Tienes un proyecto en mente?</h2>
+						<p id="project-desc">
+							¡Hagámoslo realidad! Cuéntame tu idea y en qué plataforma quieres
+							desarrollarla. Yo me encargo del resto.
+						</p>
+						<div class="button-group">
+							<a
+								id="btn-download"
+								href="assets/docs/CV-Elías-Vilcachagua.pdf"
+								class="btn btn-download"
+								download
+								>Descargar CV</a
+							>
+							<a id="btn-go" href="#contact" class="btn btn-go">¡Vamos!</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="contact"
+				class="contact-section section-bg-dark responsive-section"
+			>
+				<div class="container contact-container">
+					<div class="contact-info">
+						<h3 id="support-title">¿Necesitas apoyo?</h3>
+						<ul>
+							<li>
+								<a
+									href="https://www.google.com/maps/place/Lima,+Perú"
+									target="_blank"
+									class="link-item"
+									aria-label="Ubicación"
+								>
+									<img
+										src="assets/img/Lugar-icon.png"
+										alt="Ubicación"
+										class="icon-img"
+									/>
+									<span id="contact-location">Mi Ubicación</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="mailto:veliasr86@gmail.com"
+									class="link-item"
+									aria-label="Correo"
+								>
+									<img
+										src="assets/img/Email-icon.png"
+										alt="Email"
+										class="icon-img"
+									/>
+									<span id="contact-email">Envíame un correo</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="tel:+573187107224"
+									class="link-item"
+									aria-label="Llamar"
+								>
+									<img
+										src="assets/img/Call-me-icon.png"
+										alt="Teléfono"
+										class="icon-img"
+									/>
+									<span id="contact-call">¡Conversemos!</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://wa.me/573187107224?text=Hola%20me%20gustaría%20más%20información"
+									target="_blank"
+									class="whatsapp-link"
+									aria-label="WhatsApp"
+								>
+									<img
+										src="assets/img/Whatsapp-icon.png"
+										alt="WhatsApp"
+										class="icon-img"
+									/>
+									<span id="contact-whatsapp">WhatsApp</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="contact-form">
+						<h3 id="contact-subtitle">Contáctame</h3>
+						<h2 id="contact-title">
+							<span class="bold">Hazlo</span>
+							<span class="regular">en un click</span>
+						</h2>
+						<form
+							action="https://formsubmit.co/veliasr86@gmail.com"
+							method="POST"
+						>
+							<input type="hidden" name="_captcha" value="false" />
+							<div class="form-row">
+								<input
+									type="text"
+									name="name"
+									placeholder="Tu Nombre"
+									required
+								/>
+								<input
+									type="email"
+									name="email"
+									placeholder="Tu Email"
+									required
+								/>
+							</div>
+							<input
+								type="text"
+								name="phone"
+								placeholder="Tu Teléfono"
+								required
+							/>
+							<input type="text" name="subject" placeholder="Asunto" required />
+							<textarea
+								name="message"
+								placeholder="Tu Mensaje"
+								rows="5"
+								required
+							></textarea>
+							<button type="submit">Enviar Mensaje</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Tus otros scripts van aquí -->
+		<script>
+			// Carrusel “stack” para Acerca de mí
+			(function () {
+				const imgs = document.querySelectorAll('.about-carousel img');
+				let idx = 0;
+
+				// Inicializa: primera visible, resto ocultas
+				imgs.forEach((img, i) => {
+					img.style.opacity = i === 0 ? '1' : '0';
+					img.style.zIndex = i === 0 ? '2' : '1';
+				});
+
+				setInterval(() => {
+					imgs[idx].style.opacity = '0';
+					imgs[idx].style.zIndex = '1';
+					idx = (idx + 1) % imgs.length;
+					imgs[idx].style.opacity = '1';
+					imgs[idx].style.zIndex = '2';
+				}, 3000);
+			})();
+		</script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

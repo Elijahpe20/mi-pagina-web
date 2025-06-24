@@ -1,0 +1,1406 @@
+/* Estilos generales */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+body {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	background-color: transparent;
+	color: #333;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+/* Home Section */
+.home-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 3rem 1.25rem;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.profile-container {
+	display: flex !important;
+	align-items: center; /* alinea arriba */
+	gap: 1rem !important;
+	max-width: 75rem;
+	width: 100%;
+}
+
+.profile-img {
+	/* Fija la foto al 35% para que el gap no rompa la fila */
+	flex: 1 1 45%;
+	max-width: 100%;
+	align-self: stretch !important;
+	object-fit: cover;
+	/* Ajustes generales */
+	height: auto;
+	margin: 0 !important;
+	display: block !important;
+	border-radius: 0 !important;
+	animation: vibrar 1s infinite;
+}
+
+.text-container {
+	flex: 1 1 55%;
+	max-width: calc(
+		60% - 1rem
+	); /* Ajusta el texto para que ocupe el 60% del contenedor */
+	width: calc(70% - 1rem);
+	margin: 0 !important;
+	text-align: left !important;
+	order: 1 !important;
+}
+
+.title {
+	font-size: clamp(3rem, 6vw, 7rem);
+	font-weight: bold;
+	line-height: 1.2;
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.title .nombre,
+.title .apellido {
+	display: block; /* Fuerza salto de línea para cada span */
+}
+
+.title .nombre {
+	color: #661c73; /* Color gris oscuro para "Elías" */
+	font-style: italic; /* Estilo cursiva */
+}
+
+.title .apellido {
+	color: #661c73; /* Morado para "Vilcachagua" */
+}
+
+.title span {
+	display: block;
+}
+
+.description,
+.text-container p {
+	font-size: 1rem;
+	color: #666;
+	margin-top: 1rem;
+}
+
+.text-container h1 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+.social-links {
+	display: flex;
+	gap: 1.25rem; /* Espaciado entre íconos */
+	justify-content: flex-start; /* Alineación a la izquierda (puedes cambiar a 'center' si quieres) */
+	margin-top: 1rem; /* Separación con respecto al texto de arriba */
+	margin-left: 2rem;
+}
+
+.social-links a {
+	display: inline-block;
+}
+
+.social-icon {
+	width: 3rem !important; /* Ajusta el tamaño de los íconos */
+	height: 3rem !important;
+	transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+	transform: scale(1.2);
+}
+
+.home-section button {
+	background-color: #661c73;
+	color: white;
+	padding: 1rem 3rem; /* Aumentamos el padding */
+	border: none;
+	cursor: pointer;
+	font-size: 1.125rem; /* Aumentamos el tamaño de la fuente */
+	font-weight: bold; /* Hacemos la fuente más destacada */
+	text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+	border-radius: 0; /* Borde más redondeado */
+	margin-top: 1.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.home-section button:hover {
+	background-color: #4e48c8; /* Cambio de color cuando se pasa el mouse */
+}
+
+/* Agregar margen entre las secciones */
+section {
+	padding: 3.75rem 1.25rem;
+}
+
+/* Ajuste de la imagen */
+.home-section img {
+	width: 100%;
+	max-width: 37.5rem; /* Asegura que las imágenes no se desborden */
+	height: auto;
+	object-fit: contain;
+	margin-bottom: 1.5rem;
+}
+
+/* Títulos y texto */
+.home-section h1 {
+	font-size: 2.5rem;
+	color: #661c73;
+	margin-top: 1.5rem;
+}
+
+.home-section p {
+	font-size: 1rem;
+	color: #666;
+	margin-top: 0.75rem;
+	line-height: 1.6;
+}
+
+/* Estilos del botón */
+.home-section button {
+	background-color: #661c73;
+	color: white;
+	padding: 1.25rem 3.75rem; /* Aumentamos más el padding */
+	border: none;
+	cursor: pointer;
+	margin-top: 1.25rem; /* Reducimos el margen superior */
+	font-size: 1.75rem; /* Aumentamos más el tamaño de la fuente */
+	font-weight: bold; /* Fuente negrita */
+	text-transform: uppercase; /* Mayúsculas */
+	transition: background-color 0.3s ease; /* Transición más suave */
+	border-radius: 0; /* Sin bordes redondeados, el botón será un rectángulo */
+}
+
+.home-section button:hover {
+	background-color: #4e48c8; /* Cambio de color cuando pasa el mouse */
+}
+
+/* Verificar tamaño */
+.home-section button:focus {
+	outline: none; /* Elimina el borde de enfoque */
+}
+
+/* Header */
+header {
+	background-color: white; /* Elimina el color de fondo */
+	padding: 1.25rem 0;
+	position: relative;
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+
+nav ul li {
+	margin: 1.25rem;
+}
+
+nav ul li a {
+	font-size: clamp(1rem, 2.5vw, 1.25rem); /* 16px–20px adaptable */
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	padding: 0.625rem 0.9375rem;
+	display: inline-block;
+	transition: color 0.3s;
+}
+
+/* Cambiar el color del texto cuando se pasa el mouse */
+nav ul li a:hover {
+	color: #661c73; /* Color morado cuando el mouse está encima */
+}
+
+/* Estilo para el enlace activo */
+nav ul li a.active {
+	color: #661c73; /* Color morado */
+	font-weight: bold; /* Fuente negrita */
+}
+
+/* About Section */
+.about-section {
+	text-align: center;
+	padding: 3.75rem 1.25rem;
+}
+
+#about-title {
+	display: block !important;
+	font-size: 2.5rem;
+	color: #661c73;
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.about-section h2 {
+	font-size: 2rem;
+	margin-bottom: 1.25rem;
+	color: #222;
+}
+
+.about-text {
+	max-width: 60rem;
+	margin: 0 auto;
+	font-size: 1.25rem;
+	line-height: 1.7;
+	color: #555;
+}
+
+/* Estilo final para los títulos y descripciones dentro de las tarjetas */
+.skill-card h3 {
+	font-size: 1.25rem; /* ⬅️ agrandamos título */
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	color: #222;
+}
+
+.skill-card p {
+	font-size: 1.0625rem; /* ⬆️ ligeramente más legible */
+	line-height: 1.6;
+	color: #333;
+}
+
+/* Skills Section */
+.skills-section {
+	text-align: center;
+	padding: 3.75rem 1.25rem;
+}
+
+.skills-section h2 {
+	font-size: 2rem;
+	margin-bottom: 2.5rem;
+	color: #222;
+}
+
+.skills-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 2.5rem;
+	padding: 1.25rem;
+}
+
+.skill-card {
+	background-color: #e8d9f8;
+	border-radius: 12px;
+	padding: 1.875rem 1.5625rem;
+	max-width: 17.5rem;
+	text-align: center;
+	transition: transform 0.15s ease-out;
+	transform-style: preserve-3d; /* ✅ importante para 3D */
+	will-change: transform;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card:hover {
+	background-color: #661c73;
+	transform: translateY(-10px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card .icon {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+/* Títulos en morado para secciones específicas */
+.about-section h2,
+.skills-section h2 {
+	color: #661c73; /* morado */
+	font-size: 2.5rem; /* antes era 32rem */
+}
+
+.about-section h2,
+.skills-section h2,
+.project-section h2 {
+	margin-top: 0;
+	margin-bottom: 1.875rem;
+}
+
+#typing-text {
+	font-size: clamp(1rem, 3vw, 1.5rem); /* 16px–24px */
+	color: #555;
+	font-family: 'Trebuchet MS', sans-serif;
+	max-width: 37.5rem;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow: hidden;
+	font-style: italic;
+	min-height: 3.75rem;
+	margin-bottom: 1.25rem;
+	/* border-right: 2rem solid #661c73; */ /* ← elimina o comenta esta línea */
+	/* animation: blink-caret 0.75s step-end infinite; */ /* ← esta también */
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #661c73;
+	}
+}
+
+/* Animación tipo temblor */
+@keyframes vibrar {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translate(-2px, 2px);
+	}
+	40% {
+		transform: translate(-2px, -2px);
+	}
+	60% {
+		transform: translate(2px, 2px);
+	}
+	80% {
+		transform: translate(2px, -2px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+.vibrar {
+	animation: vibrar 1s infinite;
+}
+
+.project-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	padding: 4rem 1.25rem;
+	color: #fff;
+}
+
+.project-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2.5rem;
+}
+
+.project-image {
+	background: none;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+}
+
+.project-image img:hover {
+	transform: scale(1.03); /* Efecto de profundidad al pasar el mouse */
+}
+
+.project-content {
+	flex: 1;
+	min-width: 280px;
+	max-width: 600px;
+	text-align: left;
+}
+
+.project-content h2 {
+	font-size: clamp(2rem, 5vw, 3rem); /* 32px–48px adaptable */
+	font-style: italic;
+	margin-bottom: 1.25rem;
+}
+
+.project-content p {
+	font-size: 1.125rem;
+	margin-bottom: 1.875rem;
+	line-height: 1.6;
+}
+
+.project-section h2 {
+	font-size: 2.25rem;
+	margin-bottom: 1.25rem;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-style: italic;
+}
+
+.project-section p {
+	font-size: 1.25rem;
+	margin-bottom: 2.5rem;
+	max-width: 45rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+	gap: 1.25rem;
+	flex-wrap: wrap;
+}
+
+.btn {
+	font-size: 1.125rem;
+	padding: 0.9375rem 2.1875rem;
+	border: none;
+	border-radius: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.btn-download {
+	background-color: #661c73;
+	color: #fff;
+}
+
+.btn-download:hover {
+	background-color: #661c73;
+}
+
+.btn-go {
+	background-color: #fff;
+	color: #0077b6;
+}
+
+.btn-go:hover {
+	background-color: #e0e0e0;
+}
+
+.contact-section {
+	padding: 4rem 1.25rem;
+	font-family: 'Trebuchet MS', sans-serif;
+}
+
+.contact-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 2rem;
+	max-width: 75rem;
+	margin: 0 auto;
+	padding: 2.5rem 1.25rem;
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.contact-info h3 {
+	font-size: clamp(1.125rem, 3vw, 1.5rem); /* 18px–24px */
+	font-style: italic;
+	margin-bottom: 1.875rem;
+}
+
+.contact-info ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.contact-info ul li span {
+	font-style: italic;
+	font-size: 1rem;
+	color: white;
+	white-space: nowrap;
+}
+
+.contact-info li {
+	font-size: 1.125rem;
+	margin-bottom: 1.25rem;
+	font-style: italic;
+	display: flex;
+	align-items: center;
+	gap: 15rem;
+	color: #333;
+}
+
+.contact-info i {
+	font-size: 1.375rem;
+	color: #00aaff;
+	border: 2rem solid #00aaff;
+	border-radius: 50px;
+	padding: 0.5rem;
+	width: 2.375rem;
+	height: 2.375rem;
+	text-align: center;
+}
+
+.contact-form {
+	flex: 1 1 65%;
+	min-width: 300px;
+}
+
+.contact-form h4 {
+	text-align: center;
+	font-style: italic;
+	font-size: clamp(1rem, 2.5vw, 1.5rem); /* hasta 24px */
+	color: #0077cc;
+	margin-bottom: 10rem;
+}
+
+.contact-form h2 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.contact-form h2 span {
+	color: #00aaff;
+	font-style: italic;
+}
+
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.form-row {
+	display: flex;
+	gap: 1.25rem;
+	flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+	padding: 0.9375rem 1.25rem;
+	border: none;
+	border-radius: 30px;
+	font-size: 1rem;
+	background-color: #f9f9f9;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+	outline: none;
+}
+
+.contact-form textarea {
+	border-radius: 20px;
+	resize: none;
+}
+
+.contact-form button {
+	background-color: #00aaff;
+	color: white;
+	padding: 1rem 2.5rem;
+	border-radius: 30px;
+	border: none;
+	font-size: 1.125rem;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+	background-color: #0088cc;
+}
+
+.about-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+	flex-wrap: wrap;
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+.about-text {
+	flex: 1;
+	min-width: 280px;
+	text-align: left;
+}
+
+#about-title {
+	display: block !important;
+	font-size: 2.5rem;
+	color: #661c73;
+	text-align: left !important;
+	margin-bottom: 1rem;
+}
+
+.about-img img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	object-fit: cover;
+	border-radius: 0;
+	border: 4px solid white;
+	padding: 0.25rem;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	transition: opacity 0.5s ease-in-out;
+	animation: oscilacion-diagonal 4s infinite ease-in-out;
+}
+
+/* — Carrusel apilado en “Acerca de mí” — */
+.about-carousel {
+	position: relative;
+	width: 100%;
+	max-width: 300px; /* o el ancho que desees para el contenedor */
+	aspect-ratio: 1 / 1;
+	margin: 0 auto;
+	/* si quieres todas las imágenes mismo alto, fija height aquí */
+}
+
+.about-carousel img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: 4px solid white; /* si quieres el marco blanco */
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	opacity: 0; /* empezamos ocultas */
+	transition: opacity 0.8s ease-in-out;
+	z-index: 1;
+}
+
+/* La primera imagen se mostrará al cargar (JS también lo repite) */
+.about-carousel img:first-child {
+	opacity: 1;
+	z-index: 2;
+}
+
+/* Animación oscilante en diagonal */
+@keyframes oscilacion-diagonal {
+	0% {
+		transform: translate(0, 0) rotate(0deg);
+	}
+	25% {
+		transform: translate(-4rem, 4rem) rotate(-1deg);
+	}
+	50% {
+		transform: translate(4rem, -4rem) rotate(1deg);
+	}
+	75% {
+		transform: translate(-3rem, 3rem) rotate(-0.5deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(0deg);
+	}
+}
+
+.section-bg-light {
+	background-color: #f3eafa;
+}
+
+.section-bg-medium {
+	background: linear-gradient(135deg, #e3d4f3, #cdb3ea);
+}
+
+.section-bg-strong {
+	background: linear-gradient(135deg, #a772d1, #7e49b5);
+	color: white;
+}
+
+.section-bg-dark {
+	background: linear-gradient(135deg, #5c2e91, #3d1a6f);
+	color: white;
+}
+
+/* Espaciado y separación visual entre secciones */
+section {
+	padding: 3.75rem 1.25rem;
+}
+
+.skill-card {
+	width: 100%;
+	max-width: 300px;
+	height: 400px;
+	perspective: 1000px;
+	border-radius: 12px;
+	overflow: hidden; /* <- CLAVE para evitar que se desborde */
+	position: relative; /* <- CLAVE para que las caras internas se alineen */
+}
+
+.card-inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.8s ease-in-out;
+}
+
+.skill-card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+/* Frente */
+.card-front {
+	background-color: #f0e2fa;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+	text-align: center;
+}
+
+/* Reverso */
+.card-back {
+	transform: rotateY(180deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0e2fa;
+}
+
+/* Imagen del reverso */
+.card-back img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: 12px;
+}
+
+.form-row {
+	display: flex;
+	gap: 1.25rem;
+}
+
+.form-row input {
+	flex: 1;
+	height: auto;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	outline: none;
+	border: 2rem solid #00aaff;
+	box-shadow: 0 0 5px #00aaff;
+}
+
+.location-icon {
+	width: 6.25rem; /* Ajusta según necesidad */
+	height: auto; /* Mantén proporción */
+	max-width: 100%; /* Evita desbordamientos */
+	display: block;
+	margin: 0 auto; /* Centrado horizontal */
+}
+
+.icon-img {
+	width: 3rem; /* o el tamaño que prefieras, por ejemplo 50rem */
+	height: auto; /* mantiene la proporción */
+	max-width: 100%; /* asegura que no se desborde */
+	display: inline-block;
+}
+
+/* Estilo para alinear íconos y textos */
+.contact-info ul li {
+	display: flex;
+	align-items: center; /* ✅ Alineación vertical centrada */
+	margin-bottom: 1.5rem;
+}
+
+/* Íconos dentro de la lista */
+.contact-info ul li img {
+	width: 2.5rem;
+	height: auto;
+	flex-shrink: 0;
+}
+
+/* Enlaces sin subrayado y bien alineados */
+.contact-info ul li a {
+	display: flex;
+	align-items: center; /* ✅ Alineación vertical centrada */
+	gap: 0.75rem;
+	text-decoration: none; /* ❌ Elimina el subrayado azul */
+	color: white; /* ✅ Color blanco */
+	font-style: italic;
+	font-size: 1.1rem;
+	width: 100%;
+}
+
+/* Color de texto en hover */
+.contact-info ul li a:hover {
+	color: #e0e0e0;
+}
+
+.subtitulo-contacto {
+	font-style: italic;
+	color: white;
+	text-align: center;
+	font-size: clamp(
+		1rem,
+		2.5vw,
+		1.375rem
+	); /* hasta 22px si quieres mantenerlo */
+	margin-bottom: 10rem;
+}
+
+.titulo-contacto {
+	color: white;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.titulo-contacto .bold {
+	margin-right: 12rem;
+	font-weight: bold;
+}
+
+.titulo-contacto .regular {
+	font-weight: normal;
+}
+
+.foto-silueta {
+	width: 100%;
+	max-width: 360px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+.foto-silueta:hover {
+	transform: scale(1.03);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Toggle Visual */
+.theme-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.theme-toggle input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.toggle-label {
+	display: flex;
+	align-items: center;
+	width: 60px;
+	height: 30px;
+	background-color: #444;
+	border-radius: 30px;
+	cursor: pointer;
+	position: relative;
+	transition: background-color 0.3s ease;
+}
+
+/* Círculo blanco deslizante */
+.toggle-label::before {
+	content: '';
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	left: 3px;
+	top: 3px;
+	background-color: white;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+}
+
+/* Activado */
+#toggle-dark:checked + .toggle-label {
+	background-color: #661c73;
+}
+
+#toggle-dark:checked + .toggle-label::before {
+	transform: translateX(30px);
+}
+
+/* Íconos */
+.toggle-label .sun,
+.toggle-label .moon {
+	font-size: 1rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.toggle-label .sun {
+	left: 8px;
+}
+
+.toggle-label .moon {
+	right: 8px;
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .sun {
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .moon {
+	opacity: 1;
+}
+
+/* Cambio de fondo claro/oscuro */
+body.dark-mode {
+	background-color: #1eaed6; /* Cambiado desde #121212 */
+	color: #e0e0e0;
+}
+
+body.dark-mode .header {
+	background-color: #1a1a1a;
+}
+/* === MODO OSCURO === */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .title span {
+	color: #f5f5f5;
+}
+
+body.dark-mode p,
+body.dark-mode .description {
+	color: #cccccc;
+}
+
+body.dark-mode #typing-text {
+	color: #ffffff; /* Blanco puro */
+}
+
+.language-toggle img {
+	width: 24px;
+	height: auto;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.2s ease;
+}
+
+.language-toggle button {
+	background: none;
+	border: none;
+	font-size: 1.125rem;
+	cursor: pointer;
+	color: #333;
+	text-align: left;
+	padding: 5rem;
+}
+
+.language-toggle button:hover {
+	color: #661c73;
+}
+
+.toggle-label .sun {
+	font-size: 1rem; /* 16px */
+}
+
+/* Idioma en fila */
+.language-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Bandera */
+.language-toggle img {
+	width: 24px;
+	height: auto;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+}
+
+.language-toggle img:hover {
+	transform: scale(1.1);
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1rem;
+	pointer-events: none;
+}
+
+.toggle-label .sun {
+	left: 8px;
+}
+
+.toggle-label .moon {
+	right: 0.5rem;
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .sun {
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .moon {
+	opacity: 1;
+}
+
+/* Evita que estas secciones cambien el color del texto en modo oscuro */
+body.dark-mode .about-section,
+body.dark-mode .skills-section {
+	color: #222; /* Texto oscuro */
+}
+
+body.dark-mode .about-section h2,
+body.dark-mode .skills-section h2 {
+	color: #3e0e67; /* púrpura oscuro si lo prefieres */
+}
+
+body.dark-mode .about-section p,
+body.dark-mode .skills-section p,
+body.dark-mode .skill-card {
+	color: #333;
+}
+
+/* === Degradados en MODO OSCURO === */
+body.dark-mode .section-bg-light {
+	background-color: #e6e6e6; /* gris claro */
+}
+
+body.dark-mode .section-bg-medium {
+	background: linear-gradient(135deg, #cccccc, #999999); /* gris medio */
+}
+
+body.dark-mode .section-bg-strong {
+	background: linear-gradient(135deg, #666666, #444444); /* gris fuerte */
+	color: white;
+}
+
+body.dark-mode .section-bg-dark {
+	background: linear-gradient(135deg, #333333, #1a1a1a); /* gris muy oscuro */
+	color: white;
+}
+
+.title {
+	font-size: clamp(1.5rem, 5vw, 2.5rem); /* adaptable al móvil */
+}
+
+.profile-container {
+	/* Ya tienes flex-row; asegúrate de esto */
+	display: flex;
+	flex-direction: row;
+	align-items: stretch; /* Que todos los items llenen la altura */
+	gap: 1rem;
+}
+
+.text-container {
+	/* Que ocupe el espacio restante */
+	flex: 1 1 auto;
+	max-width: calc(100% - 30%); /* 30% ocupado por la foto */
+	margin: 0;
+	order: 1;
+}
+
+.title {
+	/* Alinea cada línea a la izquierda */
+	text-align: left !important;
+}
+
+/* Cada span en el título a la izquierda */
+.title .nombre,
+.title .apellido {
+	display: block;
+	text-align: left !important;
+}
+
+/* Asegúrate de que el botón siga abajo del texto: */
+.home-section button {
+	align-self: flex-start !important;
+}
+
+@media screen and (max-width: 768px) {
+	/* 1) Perfil en fila con wrap si no cabe */
+	.profile-container {
+		display: flex;
+		flex-direction: column; /* sigue fila en móvil */
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+		width: 100%;
+	}
+
+	/* 2) Texto al 60% */
+	.text-container {
+		flex: 1 1 100%;
+		max-width: 100%;
+		margin: 0;
+		text-align: center;
+		order: 1;
+		width: 100%;
+	}
+	.header-controls {
+		top: 0.5rem;
+		left: 1rem;
+		gap: 0.5rem;
+	}
+
+	.theme-toggle {
+		gap: 0.25rem;
+	}
+
+	.toggle-label {
+		width: 50px;
+		height: 25px;
+	}
+
+	.language-toggle {
+		margin-bottom: 0;
+		flex-direction: row;
+		align-items: center;
+	}
+	.toggle-label .sun,
+	.toggle-label .moon {
+		font-size: 1rem;
+	}
+
+	/* 3) Imagen al 40% */
+	.profile-img {
+		flex: 0 0 auto;
+		max-width: 100%;
+		width: 100%; /* Ajuste responsivo para que la imagen ocupe el 40% del espacio */
+		order: 2;
+		margin: 0;
+		align-self: stretch;
+		object-fit: cover;
+	}
+
+	/* 4) Ajustes puntuales que quieras conservar */
+	.foto-silueta {
+		max-width: 20rem;
+		width: 100%;
+		height: auto;
+	}
+	.social-links {
+		justify-content: center;
+	}
+
+	.skills-grid {
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.skill-card {
+		width: 80%;
+		max-width: 320px;
+		margin: 1rem auto; /* Centrar las tarjetas */
+		padding: 1.25rem;
+	}
+
+	.home-section button {
+		width: 100%;
+		font-size: 1rem;
+		padding: 1rem 2rem;
+		margin-top: 1rem; /* Reducir el margen superior */
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		font-size: 1rem;
+		padding: 0.75rem 1.25rem;
+	}
+
+	.home-section {
+		padding: 2rem 1rem; /* Reducir el padding en las secciones */
+	}
+
+	.home-section button {
+		margin-top: 1rem; /* Reducir el margen superior del botón */
+	}
+	.social-icon {
+		width: 4.5rem;
+		height: 4.5rem;
+	}
+	.gallery-section {
+		display: flex;
+		flex-direction: column;
+	}
+	.gallery-text,
+	.gallery-grid {
+		flex: 1 1 100%;
+		order: initial;
+		width: 100%;
+	}
+	.gallery-text {
+		margin-bottom: 1rem;
+		text-align: left;
+	}
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* o 1fr si prefieres 1 foto por fila */
+		gap: 1rem;
+	}
+	.about-carousel img {
+		width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+		height: auto;
+		object-fit: cover;
+	}
+	.project-section,
+	.contact-section {
+		padding: 2rem 1rem; /* Reduce el padding */
+	}
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+/* 1) Italica el apellido */
+.home-section .text-container .title .apellido {
+	font-style: italic !important;
+}
+
+/* 2) Aumenta el tamaño del título (nombre+apellido) */
+.home-section .text-container .title {
+	font-size: clamp(3rem, 6vw, 7rem) !important;
+	line-height: 1.1; /* ajusta el interlineado si hace falta */
+}
+
+/* ─── GALERÍA RESPONSIVE ───────────────────────────────── */
+.gallery-section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 2rem;
+	padding: 2rem 1rem;
+}
+
+.gallery-text {
+	flex: 1 1 40%;
+	order: 1;
+	text-align: left;
+}
+
+.gallery-grid {
+	flex: 1 1 55%;
+	order: 2;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1rem;
+}
+
+.gallery-grid img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Para ocultar visualmente el título pero no dejes de usarlo:
+   mejora accesibilidad */
+.sr-only {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@keyframes pendulo {
+	0% {
+		transform: translateX(-5px) scale(1);
+	}
+	50% {
+		transform: translateX(5px) scale(1.02);
+	}
+	100% {
+		transform: translateX(-5px) scale(1);
+	}
+}
+
+/* 1) Define el “pendulo”: va de -5px a +5px en X */
+@keyframes pendulo {
+	0% {
+		transform: translateX(-5px) scale(1);
+	}
+	50% {
+		transform: translateX(5px) scale(1);
+	}
+	100% {
+		transform: translateX(-5px) scale(1);
+	}
+}
+
+.about-carousel img {
+	animation: pendulo 4s ease-in-out infinite;
+}
+
+/* Unifica layout y ancho de About / Project con Skills */
+.about-container,
+.project-container {
+	display: grid !important;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2.5rem;
+	max-width: 75rem;
+	width: 100%;
+	margin: 0 auto;
+	align-items: center;
+	padding: 0 1.25rem;
+}
+
+.header-controls {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 1rem;
+	width: auto;
+	padding: 0 10px;
+}
+
+/* === Enlaces y botones en modo oscuro === */
+body.dark-mode a {
+	color: #90caf9;
+}
+
+body.dark-mode .btn {
+	background-color: #444;
+	color: #fff;
+	border: 1px solid #777;
+}
+
+body.dark-mode .btn:hover {
+	background-color: #333;
+}
