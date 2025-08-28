@@ -53,29 +53,25 @@ body {
 	width: 100%;
 }
 
-.profile-img {
-	/* Fija la foto al 35% para que el gap no rompa la fila */
-	flex: 1 1 45%;
+/* Texto DEBAJO de la foto */
+.text-container {
+	flex: 1 1 100%;
 	max-width: 100%;
-	align-self: stretch !important;
-	object-fit: cover;
-	/* Ajustes generales */
-	height: auto;
-	margin: 0 !important;
-	display: block !important;
-	border-radius: 0 !important;
-	animation: vibrar 1s infinite;
+	margin: 0;
+	text-align: center;
+	order: 2 !important; /* ↓ ahora va debajo de la foto (sobrescribe el !important global) */
+	width: 100%;
 }
 
-.text-container {
-	flex: 1 1 55%;
-	max-width: calc(
-		60% - 1rem
-	); /* Ajusta el texto para que ocupe el 60% del contenedor */
-	width: calc(70% - 1rem);
-	margin: 0 !important;
-	text-align: left !important;
-	order: 1 !important;
+/* Foto ARRIBA del texto */
+.profile-img {
+	flex: 0 0 auto;
+	max-width: 100%;
+	width: 100%;
+	order: 1; /* ↑ va primero */
+	margin: 0 0 1rem; /* separación con el título */
+	align-self: center;
+	object-fit: cover;
 }
 
 .title {
