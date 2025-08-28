@@ -208,9 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 3) Listeners de las banderas
 	document.getElementById('lang-en').addEventListener('click', () => {
 		updateLanguage('en');
+		setHeaderH(); // recalcula altura del header
 	});
 	document.getElementById('lang-es').addEventListener('click', () => {
 		updateLanguage('es');
+		setHeaderH();
 	});
 
 	// 4) Toggle Sun/Moon y persistencia en localStorage
@@ -229,23 +231,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			localStorage.setItem('theme', 'light');
 		}
 	});
+
+	// 5) Ajusta --header-h a la altura real del header
+	const headerEl = document.querySelector('header');
+	const setHeaderH = () => {
+		if (!headerEl) return;
+		const h = headerEl.offsetHeight || 72;
+		document.documentElement.style.setProperty('--header-h', `${h}px`);
+	};
+
+	setHeaderH();
+	window.addEventListener('resize', setHeaderH);
+	window.addEventListener('orientationchange', setHeaderH);
 });
 
-// === Carrusel “stack” para Acerca de mí ===
-(function () {
-	const imgs = document.querySelectorAll('.about-carousel img');
-	let idx = 0;
-
-	imgs.forEach((img, i) => {
-		img.style.opacity = i === 0 ? '1' : '0';
-		img.style.zIndex = i === 0 ? '2' : '1';
-	});
-
-	setInterval(() => {
-		imgs[idx].style.opacity = '0';
-		imgs[idx].style.zIndex = '1';
-		idx = (idx + 1) % imgs.length;
-		imgs[idx].style.opacity = '1';
-		imgs[idx].style.zIndex = '2';
-	}, 3000);
-})();
+// (El carrusel duplicado al final fue eliminado)
