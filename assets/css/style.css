@@ -1258,8 +1258,8 @@ body.dark-mode .section-bg-dark {
 	}
 
 	.home-section {
-		padding-top: 2rem;
-		margin-top: 1rem;
+		padding-top: 0.75rem;
+		margin-top: 0;
 	}
 
 	.home-section button {
@@ -1461,5 +1461,23 @@ body.dark-mode .btn:hover {
 	.nav-list a {
 		padding: 0.4rem 0.6rem;
 		font-size: 0.95rem;
+	}
+
+	/* Evitar hueco extra bajo el header en móvil */
+	.home-section {
+		padding-top: 0.75rem; /* antes 2rem */
+		margin-top: 0; /* en lugar de 1rem */
+	}
+}
+
+/* 420–768px (sobrescribe: menú en 3 columnas) */
+@media (max-width: 768px) and (min-width: 420px) {
+	.nav-list {
+		grid-template-columns: repeat(3, auto);
+		gap: 0.4rem;
+	}
+	.nav-list a {
+		font-size: 0.95rem;
+		padding: 0.35rem 0.5rem;
 	}
 }
