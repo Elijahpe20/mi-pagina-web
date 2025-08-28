@@ -34,7 +34,7 @@ const texts = {
 			'Aplicación del clima desarrollada con React y Vite, que permite consultar el estado del tiempo en diferentes ciudades en tiempo real.',
 		skillTitle4: 'Sistema CRUD de Usuarios',
 		skillDesc4:
-			'Aplicación full-stack para gestión de usuarios con operaciones CRUD completas. Desarrollada con React 19, React Hook Form para validación, Zod para esquemas, y JSON Server como API REST.',
+			'Aplicación full-stack para gestión de usuarios desarrollada con React 19, React Hook, Zod, y JSON Server.',
 		contactLocation: 'Mi Ubicación',
 		contactEmail: 'Envíame un correo',
 		contactCall: '¡Conversemos!',
@@ -44,7 +44,7 @@ const texts = {
 		description:
 			"I'm a front-end developer passionate about programming, data analysis, and the humanities.",
 		aboutDescription:
-			"I'm a fullstack developer specialized in Front-end Development, social communicator, business administrator, and data science student. I'm passionate about creating dynamic and memorable communication experiences, focusing on UI, animations, and intuitive user experiences. I work with HTML, CSS, JavaScript, and ReactJS.",
+			"I'm a full-stack developer with expertise in front-end and back-end. I'm a professional social communicator, a business administrator, and a data science student. I'm passionate about creating dynamic and memorable communication experiences, focusing on UX, animations, and intuitive user experiences. I'm proficient in HTML, CSS, JavaScript, Python, ReactJS, NodeJS, Power BI, SQL, and R.",
 		contact: 'Contact Me',
 		project: 'Do you have a project in mind?',
 		projectDesc:
@@ -74,7 +74,7 @@ const texts = {
 			'Weather application developed with React and Vite, allowing real-time weather queries for different cities.',
 		skillTitle4: 'User CRUD System',
 		skillDesc4:
-			'Full-stack user management application with complete CRUD operations. Built with React 19, React Hook Form for validation, Zod for schemas, and JSON Server as REST API.',
+			'Full-stack user management application developed with React 19, React Hook, Zod, and JSON Server.',
 		contactLocation: 'My Location',
 		contactEmail: 'Send me an email',
 		contactCall: "Let's talk!",
@@ -230,3 +230,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
+
+// === Carrusel “stack” para Acerca de mí ===
+(function () {
+	const imgs = document.querySelectorAll('.about-carousel img');
+	let idx = 0;
+
+	imgs.forEach((img, i) => {
+		img.style.opacity = i === 0 ? '1' : '0';
+		img.style.zIndex = i === 0 ? '2' : '1';
+	});
+
+	setInterval(() => {
+		imgs[idx].style.opacity = '0';
+		imgs[idx].style.zIndex = '1';
+		idx = (idx + 1) % imgs.length;
+		imgs[idx].style.opacity = '1';
+		imgs[idx].style.zIndex = '2';
+	}, 3000);
+})();
