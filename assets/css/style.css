@@ -1436,3 +1436,57 @@ body.dark-mode .btn {
 body.dark-mode .btn:hover {
 	background-color: #333;
 }
+
+/* ===== Header móvil ordenado ===== */
+@media (max-width: 768px) {
+	header {
+		padding: 0.5rem 0;
+	}
+
+	/* Quita el fixed del bloque de banderas + toggle */
+	.header-controls {
+		position: static;
+		margin: 0.25rem auto 0.5rem;
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		background: transparent;
+		box-shadow: none;
+		padding: 0;
+	}
+
+	.language-toggle {
+		gap: 0.5rem;
+	}
+	.toggle-label {
+		width: 40px;
+		height: 20px;
+	}
+	.toggle-label::before {
+		width: 16px;
+		height: 16px;
+		transform: translateX(0);
+	}
+	#toggle-dark:checked + .toggle-label::before {
+		transform: translateX(20px);
+	}
+
+	/* Menú en dos columnas, centrado y sin márgenes grandes */
+	nav {
+		padding: 0 0.5rem;
+	}
+	.nav-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* 2 columnas */
+		gap: 0.5rem;
+		justify-items: center;
+		align-items: center;
+	}
+	.nav-list li {
+		margin: 0;
+	}
+	.nav-list a {
+		padding: 0.4rem 0.6rem;
+		font-size: 0.95rem;
+	}
+}
