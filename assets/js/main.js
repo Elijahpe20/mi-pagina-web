@@ -4,33 +4,37 @@ const texts = {
 		description:
 			'Soy un Front-end developer y me apasiona la programación, el análisis de datos y las humanidades.',
 		aboutDescription:
-			'Soy un desarrollador fullstack, con especialidad en Front-end Developer, comunicador social, administrador de empresas y estudiante de ciencia de datos. Me apasiona generar experiencias de comunicación dinámicas y memorables por lo que estoy enfocado en trabajar en efectos en la interfaz de usuario (UI), animaciones y creación de experiencias de usuario intuitivas y dinámicas. Asimismo, estoy dedicado al diseño web responsivo. Tengo experiencia con HTML, CSS, JavaScript y ReactJS.',
+			'Soy un desarrollador fullstack con conocimientos en Front-end y Back-end. Soy profesional en comunicador social, administrador de empresas y estudiante de ciencia de datos. Me apasiona generar experiencias de comunicación dinámicas y memorables, enfocándome en UX, animaciones y experiencias de usuario intuitivas. Manejo HTML, CSS, JavaScript, Python, ReactJS, NodeJS, Power BI, SQL y R.',
 		contact: 'Contáctame',
 		project: '¿Tienes un proyecto en mente?',
 		projectDesc:
 			'¡Hagámoslo realidad! Cuéntame tu idea y en qué plataforma quieres desarrollarla. Yo me encargo del resto.',
 		navHome: 'Home',
 		navAbout: 'Acerca de mí',
-		navSkills: 'Mis habilidades',
+		navSkills: 'Mis Proyectos',
 		navProject: '¿Ideas en mente?',
 		navContact: 'Contáctame',
 		aboutTitle: 'Acerca de mí',
-		skillsTitle: 'Mis habilidades',
+		skillsTitle: 'Mis Proyectos',
 		contactSubtitle: 'Contáctame',
 		contactTitleBold: 'Hazlo',
 		contactTitleRegular: 'en un click',
 		btnDownload: 'Descargar CV',
 		btnGo: '¡Vamos!',
 		supportTitle: '¿Necesitas apoyo?',
-		skillTitle1: 'UX/UI Design',
+		// PROYECTOS ACTUALIZADOS
+		skillTitle1: 'React + Vite',
 		skillDesc1:
-			'Estuve a cargo de la planificación y el desarrollo de una estructura y contenidos web con mucha acogida de usuarios.',
-		skillTitle2: 'Product Designer',
+			'Aplicación web desarrollada con React, Vite y Axios que consume la Rick and Morty API para mostrar personajes, ubicaciones y su estado.',
+		skillTitle2: 'App Web',
 		skillDesc2:
-			'Lideré el rediseño de una plataforma de e-learning, desde la investigación hasta el prototipo final.',
-		skillTitle3: 'Web Design',
+			'Aplicación web desarrollada con React y Vite que muestra frases motivacionales o reflexivas de manera aleatoria.',
+		skillTitle3: 'React / JS / Axios',
 		skillDesc3:
-			'Diseñé sitios responsivos con HTML, CSS y GitHub destacando en una buena usabilidad y diseño visual coherente con los usuarios.',
+			'Aplicación del clima desarrollada con React y Vite, que permite consultar el estado del tiempo en diferentes ciudades en tiempo real.',
+		skillTitle4: 'Sistema CRUD de Usuarios',
+		skillDesc4:
+			'Aplicación full-stack para gestión de usuarios con operaciones CRUD completas. Desarrollada con React 19, React Hook Form para validación, Zod para esquemas, y JSON Server como API REST.',
 		contactLocation: 'Mi Ubicación',
 		contactEmail: 'Envíame un correo',
 		contactCall: '¡Conversemos!',
@@ -40,33 +44,37 @@ const texts = {
 		description:
 			"I'm a front-end developer passionate about programming, data analysis, and the humanities.",
 		aboutDescription:
-			"I'm a fullstack developer specialized in Front-end Development, a social communicator, business administrator, and data science student. I’m passionate about creating dynamic and memorable communication experiences, focused on UI effects, animations, and intuitive user experiences. I also specialize in responsive web design, with experience in HTML, CSS, JavaScript, and ReactJS.",
+			"I'm a fullstack developer specialized in Front-end Development, social communicator, business administrator, and data science student. I'm passionate about creating dynamic and memorable communication experiences, focusing on UI, animations, and intuitive user experiences. I work with HTML, CSS, JavaScript, and ReactJS.",
 		contact: 'Contact Me',
 		project: 'Do you have a project in mind?',
 		projectDesc:
 			"Let's make it happen! Tell me your idea and which platform you want it developed on. I'll handle the rest.",
 		navHome: 'Home',
 		navAbout: 'About Me',
-		navSkills: 'My Skills',
+		navSkills: 'My Projects',
 		navProject: 'Ideas?',
 		navContact: 'Contact',
 		aboutTitle: 'About Me',
-		skillsTitle: 'My Skills',
+		skillsTitle: 'My Projects',
 		contactSubtitle: 'Contact Me',
 		contactTitleBold: 'Do it',
 		contactTitleRegular: 'in one click',
 		btnDownload: 'Download CV',
 		btnGo: "Let's go!",
 		supportTitle: 'Need support?',
-		skillTitle1: 'UX/UI Design',
+		// UPDATED PROJECTS
+		skillTitle1: 'React + Vite',
 		skillDesc1:
-			'I was in charge of planning and developing a web structure and content that was well received by users.',
-		skillTitle2: 'Product Designer',
+			'Web application developed with React, Vite and Axios that consumes the Rick and Morty API to display characters, locations and their status.',
+		skillTitle2: 'Web App',
 		skillDesc2:
-			'I led the redesign of an e-learning platform, from research to the final prototype.',
-		skillTitle3: 'Web Design',
+			'Web application developed with React and Vite that displays motivational or reflective quotes randomly.',
+		skillTitle3: 'React / JS / Axios',
 		skillDesc3:
-			'I designed responsive websites using HTML, CSS and GitHub, focused on strong usability and coherent visual design.',
+			'Weather application developed with React and Vite, allowing real-time weather queries for different cities.',
+		skillTitle4: 'User CRUD System',
+		skillDesc4:
+			'Full-stack user management application with complete CRUD operations. Built with React 19, React Hook Form for validation, Zod for schemas, and JSON Server as REST API.',
 		contactLocation: 'My Location',
 		contactEmail: 'Send me an email',
 		contactCall: "Let's talk!",
@@ -99,6 +107,8 @@ const elements = {
 	skillDesc2: document.getElementById('skill-desc-2'),
 	skillTitle3: document.getElementById('skill-title-3'),
 	skillDesc3: document.getElementById('skill-desc-3'),
+	skillTitle4: document.getElementById('skill-title-4'),
+	skillDesc4: document.getElementById('skill-desc-4'),
 	contactLocation: document.getElementById('contact-location'),
 	contactEmail: document.getElementById('contact-email'),
 	contactCall: document.getElementById('contact-call'),
@@ -147,13 +157,15 @@ function updateLanguage(lang) {
 	elements.contactTitle.querySelector('.regular').textContent =
 		texts[lang].contactTitleRegular;
 
-	// Tarjetas de habilidades
+	// Tarjetas de habilidades/proyectos
 	elements.skillTitle1.textContent = texts[lang].skillTitle1;
 	elements.skillDesc1.textContent = texts[lang].skillDesc1;
 	elements.skillTitle2.textContent = texts[lang].skillTitle2;
 	elements.skillDesc2.textContent = texts[lang].skillDesc2;
 	elements.skillTitle3.textContent = texts[lang].skillTitle3;
 	elements.skillDesc3.textContent = texts[lang].skillDesc3;
+	elements.skillTitle4.textContent = texts[lang].skillTitle4;
+	elements.skillDesc4.textContent = texts[lang].skillDesc4;
 
 	// Ítems de contacto
 	elements.contactLocation.textContent = texts[lang].contactLocation;
@@ -162,7 +174,7 @@ function updateLanguage(lang) {
 	elements.contactWhatsApp.textContent = texts[lang].contactWhatsApp;
 }
 
-// — Carrusel “stack” para Acerca de mí —
+// — Carrusel "stack" para Acerca de mí —
 (function () {
 	const imgs = document.querySelectorAll('.about-carousel img');
 	let idx = 0;
@@ -190,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 2) Listener del botón de contacto
 	document.getElementById('contact-btn').addEventListener('click', () => {
-		window.location.href = 'mailto:example@correo.com';
+		window.location.href = 'mailto:veliasr86@gmail.com';
 	});
 
 	// 3) Listeners de las banderas

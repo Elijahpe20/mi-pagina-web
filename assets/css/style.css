@@ -197,15 +197,26 @@ section {
 
 /* Header */
 header {
-	background-color: white; /* Elimina el color de fondo */
-	padding: 1.25rem 0;
-	position: relative;
+	background-color: white;
+	padding: 1rem 0;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 nav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 nav ul li {
@@ -213,24 +224,21 @@ nav ul li {
 }
 
 nav ul li a {
-	font-size: clamp(1rem, 2.5vw, 1.25rem); /* 16px–20px adaptable */
+	font-size: clamp(0.9rem, 2.5vw, 1.25rem);
 	font-weight: bold;
 	color: #000;
 	text-decoration: none;
-	padding: 0.625rem 0.9375rem;
+	padding: 0.5rem 0.75rem;
 	display: inline-block;
 	transition: color 0.3s;
+	border-radius: 4px;
 }
 
 /* Cambiar el color del texto cuando se pasa el mouse */
-nav ul li a:hover {
-	color: #661c73; /* Color morado cuando el mouse está encima */
-}
-
-/* Estilo para el enlace activo */
+nav ul li a:hover,
 nav ul li a.active {
-	color: #661c73; /* Color morado */
-	font-weight: bold; /* Fuente negrita */
+	color: #661c73;
+	background-color: rgba(102, 28, 115, 0.1);
 }
 
 /* About Section */
@@ -288,24 +296,12 @@ nav ul li a.active {
 }
 
 .skills-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: stretch;
-	gap: 2.5rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+	gap: 2rem;
 	padding: 1.25rem;
-}
-
-.skill-card {
-	background-color: #e8d9f8;
-	border-radius: 12px;
-	padding: 1.875rem 1.5625rem;
-	max-width: 17.5rem;
-	text-align: center;
-	transition: transform 0.15s ease-out;
-	transform-style: preserve-3d; /* ✅ importante para 3D */
-	will-change: transform;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .skill-card:hover {
@@ -417,6 +413,7 @@ nav ul li a.active {
 	min-width: 280px;
 	max-width: 600px;
 	text-align: left;
+	padding: 2rem 0;
 }
 
 .project-content h2 {
@@ -726,13 +723,20 @@ section {
 }
 
 .skill-card {
+	background-color: #e8d9f8;
+	border-radius: 12px;
+	padding: 1.875rem 1.5625rem;
 	width: 100%;
-	max-width: 300px;
+	max-width: none;
+	text-align: center;
+	transition: transform 0.15s ease-out;
+	transform-style: preserve-3d;
+	will-change: transform;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	height: 400px;
 	perspective: 1000px;
-	border-radius: 12px;
-	overflow: hidden; /* <- CLAVE para evitar que se desborde */
-	position: relative; /* <- CLAVE para que las caras internas se alineen */
+	overflow: hidden;
+	position: relative;
 }
 
 .card-inner {
@@ -912,8 +916,8 @@ html {
 .toggle-label {
 	display: flex;
 	align-items: center;
-	width: 60px;
-	height: 30px;
+	width: 45px;
+	height: 22px;
 	background-color: #444;
 	border-radius: 30px;
 	cursor: pointer;
@@ -925,10 +929,10 @@ html {
 .toggle-label::before {
 	content: '';
 	position: absolute;
-	height: 24px;
-	width: 24px;
-	left: 3px;
-	top: 3px;
+	height: 18px;
+	width: 18px;
+	left: 2px;
+	top: 2px;
 	background-color: white;
 	border-radius: 50%;
 	transition: transform 0.3s ease;
@@ -940,7 +944,7 @@ html {
 }
 
 #toggle-dark:checked + .toggle-label::before {
-	transform: translateX(30px);
+	transform: translateX(23px);
 }
 
 /* Íconos */
@@ -976,7 +980,8 @@ body.dark-mode {
 }
 
 body.dark-mode .header {
-	background-color: #1a1a1a;
+	background-color: rgba(30, 174, 214, 0.95);
+	color: white;
 }
 /* === MODO OSCURO === */
 body.dark-mode h1,
@@ -995,8 +1000,8 @@ body.dark-mode #typing-text {
 }
 
 .language-toggle img {
-	width: 24px;
-	height: auto;
+	width: 20px;
+	height: 20px;
 	cursor: pointer;
 	border-radius: 50%;
 	transition: transform 0.2s ease;
@@ -1150,6 +1155,7 @@ body.dark-mode .section-bg-dark {
 		gap: 1rem;
 		text-align: center;
 		width: 100%;
+		padding-top: 1rem;
 	}
 
 	/* 2) Texto al 60% */
@@ -1163,8 +1169,24 @@ body.dark-mode .section-bg-dark {
 	}
 	.header-controls {
 		top: 0.5rem;
-		left: 1rem;
+		right: 0.5rem;
 		gap: 0.5rem;
+		padding: 0.25rem;
+	}
+
+	header {
+		padding: 0.75rem 0;
+	}
+
+	/* Navegación en móvil */
+	nav ul {
+		justify-content: center;
+		gap: 0.5rem;
+	}
+
+	nav ul li a {
+		font-size: 0.9rem;
+		padding: 0.4rem 0.6rem;
 	}
 
 	.theme-toggle {
@@ -1172,8 +1194,8 @@ body.dark-mode .section-bg-dark {
 	}
 
 	.toggle-label {
-		width: 50px;
-		height: 25px;
+		width: 45px;
+		height: 22px;
 	}
 
 	.language-toggle {
@@ -1211,6 +1233,7 @@ body.dark-mode .section-bg-dark {
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
+		margin-bottom: 4rem;
 	}
 
 	.skill-card {
@@ -1234,7 +1257,8 @@ body.dark-mode .section-bg-dark {
 	}
 
 	.home-section {
-		padding: 2rem 1rem; /* Reducir el padding en las secciones */
+		padding-top: 2rem;
+		margin-top: 1rem;
 	}
 
 	.home-section button {
@@ -1379,15 +1403,23 @@ body.dark-mode .section-bg-dark {
 	margin: 0 auto;
 	align-items: center;
 	padding: 0 1.25rem;
+	min-height: 400px; /* Altura mínima del contenedor */
+	padding: 3rem 0; /* Padding vertical adicional */
+	align-items: center;
 }
 
 .header-controls {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
 	display: flex;
-	justify-content: flex-end;
 	align-items: center;
 	gap: 1rem;
-	width: auto;
-	padding: 0 10px;
+	z-index: 1000;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 0.5rem;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* === Enlaces y botones en modo oscuro === */
