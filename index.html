@@ -9,14 +9,24 @@
 
 	<body>
 		<header class="header">
+			<nav
+				id="main-menu"
+				class="main-nav"
+				role="navigation"
+				aria-label="Menú principal"
+			>
+				<ul class="nav-list">
+					<li><a href="#home" id="nav-home">Home</a></li>
+					<li><a href="#about" id="nav-about">Acerca de mí</a></li>
+					<li><a href="#skills" id="nav-skills">Mis Proyectos</a></li>
+					<li><a href="#project" id="nav-project">¿Ideas en mente?</a></li>
+					<li><a href="#contact" id="nav-contact">Contáctame</a></li>
+				</ul>
+			</nav>
 			<div class="header-controls">
-				<!-- Contenedor de idioma + toggle -->
 				<div class="language-toggle">
-					<!-- Banderas -->
 					<img src="assets/img/es.png" alt="Español" id="lang-es" />
 					<img src="assets/img/en.png" alt="English" id="lang-en" />
-
-					<!-- Toggle Sol/Luna anidado -->
 					<div class="theme-toggle">
 						<input type="checkbox" id="toggle-dark" />
 						<label for="toggle-dark" class="toggle-label">
@@ -26,16 +36,6 @@
 					</div>
 				</div>
 			</div>
-
-			<nav class="main-nav" role="navigation" aria-label="Menú principal">
-				<ul class="nav-list">
-					<li><a href="#home" id="nav-home">Home</a></li>
-					<li><a href="#about" id="nav-about">Acerca de mí</a></li>
-					<li><a href="#skills" id="nav-skills">Mis Proyectos</a></li>
-					<li><a href="#project" id="nav-project">¿Ideas en mente?</a></li>
-					<li><a href="#contact" id="nav-contact">Contáctame</a></li>
-				</ul>
-			</nav>
 		</header>
 		<main>
 			<section id="home" class="home-section responsive-section">

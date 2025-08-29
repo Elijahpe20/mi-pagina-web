@@ -10,20 +10,17 @@ main {
 [id] {
 	scroll-margin-top: calc(var(--header-h) + 8px);
 } /* #about, #skills, etc. */
-
 /* Estilos generales */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
 img {
 	max-width: 100%;
 	height: auto;
 	display: block;
 }
-
 body {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
@@ -32,7 +29,6 @@ body {
 	font-size: 1rem;
 	line-height: 1.6;
 }
-
 /* Home Section */
 .home-section {
 	display: flex;
@@ -44,7 +40,6 @@ body {
 	max-width: 100%;
 	margin: 0 auto;
 }
-
 .profile-container {
 	display: flex !important;
 	align-items: center; /* alinea arriba */
@@ -52,7 +47,6 @@ body {
 	max-width: 75rem;
 	width: 100%;
 }
-
 /* Texto DEBAJO de la foto */
 .text-container {
 	flex: 1 1 100%;
@@ -62,7 +56,6 @@ body {
 	order: 2 !important; /* ↓ ahora va debajo de la foto (sobrescribe el !important global) */
 	width: 100%;
 }
-
 /* Foto ARRIBA del texto */
 .profile-img {
 	flex: 0 0 auto;
@@ -74,50 +67,58 @@ body {
 	object-fit: cover;
 }
 
+/* Contenedor del título para controlar mejor el centrado */
+.title-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+/* El título mantiene su alineación pero sirve como referencia para el centrado */
 .title {
 	font-size: clamp(3rem, 6vw, 7rem);
 	font-weight: bold;
 	line-height: 1.2;
-	text-align: left;
+	text-align: center;
 	margin-bottom: 1rem;
+	width: auto; /* Se ajusta al contenido del texto */
+	display: inline-block;
 }
 
 .title .nombre,
 .title .apellido {
 	display: block; /* Fuerza salto de línea para cada span */
 }
-
 .title .nombre {
 	color: #661c73; /* Color gris oscuro para "Elías" */
 	font-style: italic; /* Estilo cursiva */
 }
-
 .title .apellido {
 	color: #661c73; /* Morado para "Vilcachagua" */
 }
-
 .title span {
 	display: block;
 }
-
 .description,
 .text-container p {
 	font-size: 1rem;
 	color: #666;
 	margin-top: 1rem;
 }
-
 .text-container h1 {
 	font-size: 2rem;
 	margin-bottom: 1.5rem;
 }
 
+/* Corrige la alineación de los iconos de redes sociales */
 .social-links {
-	display: flex;
-	gap: 1.25rem; /* Espaciado entre íconos */
-	justify-content: flex-start; /* Alineación a la izquierda (puedes cambiar a 'center' si quieres) */
-	margin-top: 1rem; /* Separación con respecto al texto de arriba */
-	margin-left: 2rem;
+	display: flex !important;
+	gap: 1.25rem;
+	justify-content: center !important;
+	margin: 1rem 0 !important;
+	width: auto !important; /* Se ajusta al contenido en lugar de 100% */
+	align-self: center !important; /* Se centra dentro del contenedor padre */
 }
 
 .social-links a {
@@ -133,30 +134,28 @@ body {
 .social-icon:hover {
 	transform: scale(1.2);
 }
-
+/* Botón centrado con respecto al título */
 .home-section button {
 	background-color: #661c73;
 	color: white;
-	padding: 1rem 3rem; /* Aumentamos el padding */
+	padding: 1.25rem 3.75rem;
 	border: none;
 	cursor: pointer;
-	font-size: 1.125rem; /* Aumentamos el tamaño de la fuente */
-	font-weight: bold; /* Hacemos la fuente más destacada */
-	text-transform: uppercase; /* Convertimos el texto a mayúsculas */
-	border-radius: 0; /* Borde más redondeado */
-	margin-top: 1.5rem;
+	font-size: 1.75rem;
+	font-weight: bold;
+	text-transform: uppercase;
 	transition: background-color 0.3s ease;
+	border-radius: 0;
+	margin: 1rem 0 0 0 !important;
+	align-self: center !important; /* Centrado dentro del contenedor padre */
 }
-
 .home-section button:hover {
 	background-color: #4e48c8; /* Cambio de color cuando se pasa el mouse */
 }
-
 /* Agregar margen entre las secciones */
 section {
 	padding: 3.75rem 1.25rem;
 }
-
 /* Ajuste de la imagen */
 .home-section img {
 	width: 100%;
@@ -165,21 +164,18 @@ section {
 	object-fit: contain;
 	margin-bottom: 1.5rem;
 }
-
 /* Títulos y texto */
 .home-section h1 {
 	font-size: 2.5rem;
 	color: #661c73;
 	margin-top: 1.5rem;
 }
-
 .home-section p {
 	font-size: 1rem;
 	color: #666;
 	margin-top: 0.75rem;
 	line-height: 1.6;
 }
-
 /* Estilos del botón */
 .home-section button {
 	background-color: #661c73;
@@ -194,36 +190,49 @@ section {
 	transition: background-color 0.3s ease; /* Transición más suave */
 	border-radius: 0; /* Sin bordes redondeados, el botón será un rectángulo */
 }
-
 .home-section button:hover {
 	background-color: #4e48c8; /* Cambio de color cuando pasa el mouse */
 }
-
 /* Verificar tamaño */
 .home-section button:focus {
 	outline: none; /* Elimina el borde de enfoque */
 }
-
 /* Header (GLOBAL) */
 header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
 	background-color: #fff;
 	position: sticky;
 	top: 0;
 	z-index: 999;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	padding: 1rem 0; /* altura base desktop/tablet */
 }
 
 /* === Header controls: GLOBAL === */
 .header-controls {
-	position: static;
 	display: flex;
 	align-items: center;
-	gap: 1rem;
-	background: transparent;
-	padding: 0;
-	box-shadow: none;
-	z-index: 1;
+	gap: 0.5rem;
+}
+
+.language-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.language-toggle img {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.2s;
+}
+
+.language-toggle img:hover {
+	transform: scale(1.1);
 }
 
 nav {
@@ -361,8 +370,6 @@ nav ul li a.active {
 	font-style: italic;
 	min-height: 3.75rem;
 	margin-bottom: 1.25rem;
-	/* border-right: 2rem solid #661c73; */ /* ← elimina o comenta esta línea */
-	/* animation: blink-caret 0.75s step-end infinite; */ /* ← esta también */
 }
 
 @keyframes blink-caret {
@@ -661,7 +668,7 @@ nav ul li a.active {
 	animation: oscilacion-diagonal 4s infinite ease-in-out;
 }
 
-/* — Carrusel apilado en “Acerca de mí” — */
+/* — Carrusel apilado en "Acerca de mí" — */
 .about-carousel {
 	position: relative;
 	width: 100%;
@@ -991,6 +998,7 @@ body.dark-mode .header {
 	background-color: rgba(30, 174, 214, 0.95);
 	color: white;
 }
+
 /* === MODO OSCURO === */
 body.dark-mode h1,
 body.dark-mode h2,
@@ -1095,60 +1103,92 @@ body.dark-mode .skill-card {
 	color: #333;
 }
 
-/* === Degradados en MODO OSCURO === */
-body.dark-mode .section-bg-light {
-	background-color: #e6e6e6; /* gris claro */
+.language-toggle img {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.2s ease;
 }
 
-body.dark-mode .section-bg-medium {
-	background: linear-gradient(135deg, #cccccc, #999999); /* gris medio */
+.language-toggle button {
+	background: none;
+	border: none;
+	font-size: 1.125rem;
+	cursor: pointer;
+	color: #333;
+	text-align: left;
 }
 
-body.dark-mode .section-bg-strong {
-	background: linear-gradient(135deg, #666666, #444444); /* gris fuerte */
-	color: white;
+.language-toggle button:hover {
+	color: #661c73;
 }
 
-body.dark-mode .section-bg-dark {
-	background: linear-gradient(135deg, #333333, #1a1a1a); /* gris muy oscuro */
-	color: white;
+.toggle-label .sun {
+	font-size: 1rem; /* 16px */
 }
 
-.title {
-	font-size: clamp(1.5rem, 5vw, 2.5rem); /* adaptable al móvil */
-}
-
-.profile-container {
-	/* Ya tienes flex-row; asegúrate de esto */
+/* Idioma en fila */
+.language-toggle {
 	display: flex;
-	flex-direction: row;
-	align-items: stretch; /* Que todos los items llenen la altura */
-	gap: 1rem;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-.text-container {
-	/* Que ocupe el espacio restante */
-	flex: 1 1 auto;
-	max-width: calc(100% - 30%); /* 30% ocupado por la foto */
-	margin: 0;
-	order: 1;
+/* Bandera */
+.language-toggle img {
+	width: 24px;
+	height: auto;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
 }
 
-.title {
-	/* Alinea cada línea a la izquierda */
-	text-align: left !important;
+.language-toggle img:hover {
+	transform: scale(1.1);
 }
 
-/* Cada span en el título a la izquierda */
-.title .nombre,
-.title .apellido {
-	display: block;
-	text-align: left !important;
+.toggle-label .sun,
+.toggle-label .moon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1rem;
+	pointer-events: none;
 }
 
-/* Asegúrate de que el botón siga abajo del texto: */
-.home-section button {
-	align-self: flex-start !important;
+.toggle-label .sun {
+	left: 8px;
+}
+
+.toggle-label .moon {
+	right: 0.5rem;
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .sun {
+	opacity: 0;
+}
+
+#toggle-dark:checked + .toggle-label .moon {
+	opacity: 1;
+}
+
+/* Evita que estas secciones cambien el color del texto en modo oscuro */
+body.dark-mode .about-section,
+body.dark-mode .skills-section {
+	color: #222; /* Texto oscuro */
+}
+
+body.dark-mode .about-section h2,
+body.dark-mode .skills-section h2 {
+	color: #3e0e67; /* púrpura oscuro si lo prefieres */
+}
+
+body.dark-mode .about-section p,
+body.dark-mode .skills-section p,
+body.dark-mode .skill-card {
+	color: #333;
 }
 
 @media screen and (max-width: 768px) {
@@ -1200,6 +1240,7 @@ body.dark-mode .section-bg-dark {
 		flex-direction: row;
 		align-items: center;
 	}
+
 	.toggle-label .sun,
 	.toggle-label .moon {
 		font-size: 1rem;
@@ -1222,6 +1263,7 @@ body.dark-mode .section-bg-dark {
 		width: 100%;
 		height: auto;
 	}
+
 	.social-links {
 		justify-content: center;
 	}
@@ -1261,24 +1303,29 @@ body.dark-mode .section-bg-dark {
 	.home-section button {
 		margin-top: 1rem; /* Reducir el margen superior del botón */
 	}
+
 	.social-icon {
 		width: 4.5rem;
 		height: 4.5rem;
 	}
+
 	.gallery-section {
 		display: flex;
 		flex-direction: column;
 	}
+
 	.gallery-text,
 	.gallery-grid {
 		flex: 1 1 100%;
 		order: initial;
 		width: 100%;
 	}
+
 	.gallery-text {
 		margin-bottom: 1rem;
 		text-align: left;
 	}
+
 	.gallery-grid {
 		display: grid;
 		grid-template-columns: repeat(
@@ -1287,11 +1334,13 @@ body.dark-mode .section-bg-dark {
 		); /* o 1fr si prefieres 1 foto por fila */
 		gap: 1rem;
 	}
+
 	.about-carousel img {
 		width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
 		height: auto;
 		object-fit: cover;
 	}
+
 	.project-section,
 	.contact-section {
 		padding: 2rem 1rem; /* Reduce el padding */
@@ -1304,6 +1353,7 @@ body.dark-mode .section-bg-dark {
 	margin: 0 auto;
 	padding: 0 1rem;
 }
+
 /* 1) Italica el apellido */
 .home-section .text-container .title .apellido {
 	font-style: italic !important;
@@ -1376,94 +1426,83 @@ body.dark-mode .section-bg-dark {
 	animation: pendulo 4s ease-in-out infinite;
 }
 
-/* Unifica layout y ancho de About / Project con Skills */
-.about-container,
-.project-container {
-	display: grid !important;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 2.5rem;
-	max-width: 75rem;
+.container {
+	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
-	align-items: center;
-	padding: 0 1.25rem;
-	min-height: 400px; /* Altura mínima del contenedor */
-	padding: 3rem 0; /* Padding vertical adicional */
-	align-items: center;
+	padding: 0 1rem;
 }
 
-/* === Enlaces y botones en modo oscuro === */
-body.dark-mode a {
-	color: #90caf9;
+/* 1) Italica el apellido */
+.home-section .text-container .title .apellido {
+	font-style: italic !important;
 }
 
-body.dark-mode .btn {
-	background-color: #444;
-	color: #fff;
-	border: 1px solid #777;
+/* 2) Aumenta el tamaño del título (nombre+apellido) */
+.home-section .text-container .title {
+	font-size: clamp(3rem, 6vw, 7rem) !important;
+	line-height: 1.1; /* ajusta el interlineado si hace falta */
 }
 
-body.dark-mode .btn:hover {
-	background-color: #333;
+/* ─── GALERÍA RESPONSIVE ───────────────────────────────── */
+.gallery-section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 2rem;
+	padding: 2rem 1rem;
 }
 
-/* ===== Header móvil ordenado ===== */
-@media (max-width: 768px) {
-	header {
-		padding: 0.5rem 0;
-	}
+.gallery-text {
+	flex: 1 1 40%;
+	order: 1;
+	text-align: left;
+}
 
-	.header-controls {
-		position: static;
-		margin: 0.25rem auto 0.5rem;
-		display: flex;
-		justify-content: center;
-		gap: 0.5rem;
-		background: transparent;
-		box-shadow: none;
-		padding: 0;
-	}
+.gallery-grid {
+	flex: 1 1 55%;
+	order: 2;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1rem;
+}
 
-	.language-toggle {
-		gap: 0.5rem;
-	}
-	.toggle-label {
-		width: 40px;
-		height: 20px;
-	}
-	.toggle-label::before {
-		width: 16px;
-		height: 16px;
-		transform: translateX(0);
-	}
-	#toggle-dark:checked + .toggle-label::before {
-		transform: translateX(20px);
-	}
+.gallery-grid img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-	/* Menú en dos columnas, centrado y sin márgenes grandes */
-	nav {
-		padding: 0 0.5rem;
-	}
-	.nav-list {
-		display: grid;
-		grid-template-columns: 1fr 1fr; /* 2 columnas */
-		gap: 0.5rem;
-		justify-items: center;
-		align-items: center;
-	}
-	.nav-list li {
-		margin: 0;
-	}
-	.nav-list a {
-		padding: 0.4rem 0.6rem;
-		font-size: 0.95rem;
-	}
+/* Para ocultar visualmente el título pero no dejes de usarlo:
+   mejora accesibilidad */
+.sr-only {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
 
-	/* Evitar hueco extra bajo el header en móvil */
-	.home-section {
-		padding-top: 0.75rem; /* antes 2rem */
-		margin-top: 0; /* en lugar de 1rem */
+@keyframes pendulo {
+	0% {
+		transform: translateX(-5px) scale(1);
 	}
+	50% {
+		transform: translateX(5px) scale(1.02);
+	}
+	100% {
+		transform: translateX(-5px) scale(1);
+	}
+}
+
+.about-carousel img {
+	animation: pendulo 4s ease-in-out infinite;
 }
 
 /* 420–768px (sobrescribe: menú en 3 columnas) */
@@ -1472,6 +1511,7 @@ body.dark-mode .btn:hover {
 		grid-template-columns: repeat(3, auto);
 		gap: 0.4rem;
 	}
+
 	.nav-list a {
 		font-size: 0.95rem;
 		padding: 0.35rem 0.5rem;
