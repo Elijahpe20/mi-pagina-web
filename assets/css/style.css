@@ -1853,3 +1853,42 @@ body.dark-mode .skill-card {
 		flex-wrap: wrap;
 	} /* pisa el gap:15rem */
 }
+
+/* ====== Header móvil robusto (pisa lo anterior) ====== */
+@media (max-width: 768px) {
+	.header {
+		display: grid;
+		grid-template-columns: auto 1fr auto; /* hamburguesa | espacio | controles */
+		align-items: center;
+		padding: 0.75rem 1rem;
+		overflow: visible;
+	}
+
+	/* El nav ya no ocupa todo el ancho */
+	.main-nav {
+		width: auto !important;
+		min-width: 0; /* permite encoger */
+		order: -1; /* queda a la izquierda si querés */
+	}
+
+	.header-controls {
+		display: flex !important;
+		gap: 0.5rem;
+		align-items: center;
+		justify-self: end; /* a la derecha */
+		z-index: 1001; /* por si el menú se superpone */
+	}
+
+	.language-toggle {
+		display: flex !important;
+		gap: 0.4rem;
+	}
+	.language-toggle img {
+		width: 20px !important;
+		height: 20px !important;
+		display: block !important;
+	}
+	.theme-toggle {
+		display: flex !important;
+	}
+}
