@@ -1704,3 +1704,71 @@ body.dark-mode .skill-card {
 	--header-h: 64px;
 }
 /* (resto del parche que te pasé) */
+
+/* ===== FIX overflow lateral y layout móvil ===== */
+
+/* Por si algún hijo se pasa, cortamos horizontal */
+html,
+body {
+	overflow-x: hidden;
+}
+
+/* 1) GAP descomunal en la lista de contacto (principal culpable) */
+.contact-info li {
+	gap: 0.75rem !important; /* en lugar de 15rem */
+	flex-wrap: wrap;
+}
+
+/* 2) Evitar que animaciones de imágenes derramen píxeles */
+.about-img,
+.about-carousel {
+	overflow: hidden;
+}
+@media (max-width: 768px) {
+	.about-img img,
+	.about-carousel img {
+		animation: none !important;
+		transform: none !important;
+	}
+}
+
+/* 3) Contenedores nunca deben superar el viewport en móvil */
+section,
+.container,
+.home-section,
+.skills-section,
+.project-section,
+.contact-section,
+.about-section {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+/* 4) Grid de Skills en una columna en móvil (tu regla actual no pisa display:grid) */
+@media (max-width: 768px) {
+	.skills-grid {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		padding: 0;
+		gap: 1rem;
+	}
+	.skill-card {
+		max-width: 380px;
+		width: 100%;
+		margin-inline: auto;
+	}
+}
+
+/* 5) Header robusto: nav no empuja controles */
+.header {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 0.5rem;
+}
+.main-nav {
+	min-width: 0;
+} /* deja que encoja */
+.header-controls {
+	flex: 0 0 auto;
+}
