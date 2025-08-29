@@ -1517,3 +1517,178 @@ body.dark-mode .skill-card {
 		padding: 0.35rem 0.5rem;
 	}
 }
+
+/* ========== ESTILOS DEL BOTÓN HAMBURGUESA ========== */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 1000;
+	position: relative;
+}
+
+.hamburger span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: #333;
+	margin: 4px 0;
+	transition: all 0.3s ease;
+	border-radius: 2px;
+}
+
+/* Animación del hamburguesa cuando está activo */
+.hamburger.active span:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Dark mode para el botón hamburguesa */
+.dark-mode .hamburger span {
+	background-color: #fff;
+}
+
+/* ========== MEDIA QUERIES PARA MÓVIL ========== */
+@media (max-width: 768px) {
+	/* Mostrar el botón hamburguesa */
+	.hamburger {
+		display: flex;
+	}
+
+	/* Ajustar el header para móvil */
+	.header {
+		padding: 1rem;
+		position: relative;
+	}
+
+	/* Contenedor del nav */
+	.main-nav {
+		position: static;
+		width: 100%;
+	}
+
+	/* Ocultar menú por defecto en móvil */
+	.nav-list {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		background: white;
+		flex-direction: column;
+		padding: 1rem 0;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		z-index: 999;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
+
+	/* Mostrar menú cuando está activo */
+	.nav-list.active {
+		display: flex;
+		max-height: 500px;
+		animation: slideDown 0.3s ease-out;
+	}
+
+	/* Estilos para los items del menú en móvil */
+	.nav-list li {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-list li a {
+		display: block;
+		padding: 0.75rem 1rem;
+		width: 100%;
+		transition: background-color 0.3s ease;
+		color: #333;
+		text-decoration: none;
+	}
+
+	.nav-list li a:hover {
+		background-color: rgba(128, 0, 128, 0.1);
+	}
+
+	/* Dark mode para el menú móvil */
+	.dark-mode .nav-list {
+		background-color: #1a1a1a;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	}
+
+	.dark-mode .nav-list li a {
+		color: #fff;
+	}
+
+	.dark-mode .nav-list li a:hover {
+		background-color: rgba(128, 0, 128, 0.2);
+	}
+
+	/* Ajustar controles del header en móvil */
+	.header-controls {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	/* Ajustar el layout del header */
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.main-nav {
+		order: -1;
+		flex: 0 0 auto;
+	}
+}
+
+/* Animación de deslizamiento */
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+	.hamburger {
+		width: 30px;
+		height: 30px;
+	}
+
+	.hamburger span {
+		width: 22px;
+		height: 2.5px;
+		margin: 3px 0;
+	}
+
+	.nav-list li a {
+		padding: 1rem;
+		font-size: 1rem;
+	}
+}

@@ -243,6 +243,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHeaderH();
 	window.addEventListener('resize', setHeaderH);
 	window.addEventListener('orientationchange', setHeaderH);
-});
 
-// (El carrusel duplicado al final fue eliminado)
+	// 6) === MENÚ HAMBURGUESA PARA MÓVIL ===
+	const hamburger = document.getElementById('hamburger');
+	const navMenu = document.querySelector('.nav-list');
+
+	if (hamburger && navMenu) {
+		hamburger.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+			hamburger.classList.toggle('active'); // Para animar el botón hamburguesa
+		});
+
+		// Cerrar menú al hacer clic en un enlace
+		const navLinks = document.querySelectorAll('.nav-list a');
+		navLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				navMenu.classList.remove('active');
+				hamburger.classList.remove('active');
+			});
+		});
+
+		// Cerrar menú al hacer clic fuera
+		document.addEventListener('click', (e) => {
+			if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+				navMenu.classList.remove('active');
+				hamburger.classList.remove('active');
+			}
+		});
+	}
+});
