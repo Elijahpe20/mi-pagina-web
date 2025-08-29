@@ -1692,3 +1692,15 @@ body.dark-mode .skill-card {
 		font-size: 1rem;
 	}
 }
+
+/* ...tu CSS existente... */
+
+@media (max-width: 480px) {
+	/* reglas... */
+} /* ← cerrá este @media si no estaba cerrado */
+
+/* ===== Parche nuevo va desde acá ===== */
+:root {
+	--header-h: 64px;
+}
+/* (resto del parche que te pasé) */
